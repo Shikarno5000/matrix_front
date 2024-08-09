@@ -4,6 +4,9 @@
                   ssh user@ip -p<port>
                   ssh root@5.35.84.206
 
+                  Создание ключей
+                        https://mad-dog.ru/podkluchenie-github-po-ssh/
+
             Отладка:
                   Попробовал переписать ключ      
 
