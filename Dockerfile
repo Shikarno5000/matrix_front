@@ -1,13 +1,11 @@
-FROM python:3.10-slim
+FROM node:18-alpine
+ENV PORT=3000
 
-WORKDIR /app/
+WORKDIR app
+COPY . .
 
-RUN python -m pip install --upgrade pip
+COPY package.json .
+RUN npm install
 
-COPY requirements.txt .
-RUN python -m pip install -r requirements.txt
-
-COPY ./ .
-
-EXPOSE 8501
-CMD ["streamlit", "run", "app.py"]
+EXPOSE $PORT
+CMD npm run start

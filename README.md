@@ -1,4 +1,9 @@
-# test_beget
-проба выполнить переезд на бегет
-1. Проба изменить локально
-2. Проба создать простой деплой https://habr.com/ru/articles/824526/  https://habr.com/ru/articles/824526/ https://habr.com/ru/articles/810041/ https://docs.servicestack.net/ssh-docker-compose-deploment#leveraging-github-container-registry .github/workflows/rubyonrails.yml
+1. проба понять как делать правильный перенос с докером  https://github.com/mohammed-bahumaish/github-actions-push-docker-image-via-ssh
+      1. настройка переменных в github
+            1. Подклчюение по ip  https://www.ispmanager.ru/knowledge-base/podklyuchenie-k-serveru-linux-po-ssh
+                  ssh user@ip -p<port>
+                  ssh root@5.35.84.206
+
+
+В чем нужно еще разобраться:
+      Что делать с https
