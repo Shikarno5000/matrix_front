@@ -27,4 +27,4 @@ jobs:
       # - run: yarn build
       # Deploy
       - run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete ./ root@5.35.84.206:../var/www/html/.output
-      - run: "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 reboot"
+      #- run: "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 reboot"
