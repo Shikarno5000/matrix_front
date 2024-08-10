@@ -22,9 +22,9 @@ jobs:
       - run: echo "${{ secrets.key }}" > "$HOME/.ssh/key"
       - run: chmod 600 "$HOME/.ssh/key"
       # Build
-      - run: yarn install
+      #- run: yarn install
       # - run: npm run build
-      - run: yarn build
+      # - run: yarn build
       # Deploy
-      - run: cd .output && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete ./ root@5.35.84.206:../var/www/html/.output
+      - run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete ./ root@5.35.84.206:../var/www/html/.output
       - run: "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 reboot"
