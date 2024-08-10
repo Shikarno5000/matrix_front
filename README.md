@@ -6,6 +6,8 @@
 
                   Создание ключей
                         https://mad-dog.ru/podkluchenie-github-po-ssh/
+                        cat ~/.ssh/id_rsa.pub
+
 
             Отладка:
                   Попробовал переписать ключ  3 
