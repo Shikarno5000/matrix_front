@@ -21,12 +21,11 @@ jobs:
 
       - name: Transfer Docker image to remote server
         run: |
-          echo "привет"
           mkdir -p ~/.ssh
-          echo "привет 2"
           echo "${{ secrets.PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          echo "привет 3"
           chmod 600 ~/.ssh/id_rsa
+          cat ~/.ssh/id_rsa
+          echo {{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_ADDRESS }}:${{ secrets.REMOTE_SERVER_PATH }}
           scp -o StrictHostKeyChecking=no my-image.tar ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_ADDRESS }}:${{ secrets.REMOTE_SERVER_PATH }}
 
       - name: Load Docker image on remote server
