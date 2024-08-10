@@ -20,5 +20,11 @@ https://github.com/marketplace/actions/ssh-deploy
 проба создать новый файл  из примера выше 
 проба залить скопроиванную версию 4
 
+ssh-copy-id -i ~/.ssh/id_rsa.pub root@5.35.84.206
+ssh-keygen -t rsa -q -N '' -f ~/.ssh/id_rsa
+ll -l .ssh/
+
+
+
 В чем нужно еще разобраться:
       Что делать с https
