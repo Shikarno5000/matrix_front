@@ -13,6 +13,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      # - name: Build Docker image
+      #  run: docker build -t my-image:latest .
+
+      #- name: Save Docker image as tar file
+      #  run: docker save -o my-image.tar my-image:latest
+
       - name: Transfer Docker image to remote server
         run: |
           echo "привет"
