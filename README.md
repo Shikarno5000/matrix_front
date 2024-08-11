@@ -1,3 +1,11 @@
+
+
+https://www.programonaut.com/how-to-deploy-a-git-repository-to-a-server-using-github-actions/
+
+Новая попытка 1 test2.yaml
+
+
+
 1. проба понять как делать правильный перенос с докером  https://github.com/mohammed-bahumaish/github-actions-push-docker-image-via-ssh
       1. настройка переменных в github
             1. Подклчюение по ip  https://www.ispmanager.ru/knowledge-base/podklyuchenie-k-serveru-linux-po-ssh
