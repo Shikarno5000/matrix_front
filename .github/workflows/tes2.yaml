@@ -26,5 +26,5 @@ jobs:
       # - run: npm run build
       # - run: yarn build
       # Deploy
-      - run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete ./ root@lbifadjrwd:../var/www/html/.output
-      #- run: "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 reboot"
+      #- run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete ./ root@lbifadjrwd:../var/www/html/.output
+      - run: "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 reboot"

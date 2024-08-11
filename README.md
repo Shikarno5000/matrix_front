@@ -1,5 +1,14 @@
 
 
+
+ssh-keygen -t rsa -b 4096 -C "root@5.35.84.206" 
+cat /root/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+cat /root/.ssh/id_rsa
+скопировал с пробелом
+
+
+
+
 https://www.programonaut.com/how-to-deploy-a-git-repository-to-a-server-using-github-actions/
 
 Новая попытка 8 test2.yaml
