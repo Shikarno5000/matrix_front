@@ -40,16 +40,16 @@ jobs:
       - name: Load Docker image on remote server
         run: |
           ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 << 'ENDSSH'
-          docker load -i my-image.tar
+          docker load -i ~/images/my-image.tar
           ENDSSH
 
       - name: Transfer Docker Compose file to remote server
         run: |
-          scp -o HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 docker-compose.yaml root@5.35.84.206:.
+          rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete ./docker-compose.yaml root@5.35.84.206:../dc
 
       - name: Deploy Docker containers using Docker Compose on remote server
         run: |
-          ssh -o HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 << 'ENDSSH'
-          docker compose -f docker-compose.yaml up -d
+          ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 << 'ENDSSH'
+          docker compose -f ~/dc/docker-compose.yaml up -d
           ENDSSH  
 
