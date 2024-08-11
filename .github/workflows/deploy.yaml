@@ -36,11 +36,10 @@ jobs:
 
       - name: Transfer Docker image to remote server
         run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete ./my-image.tar root@5.35.84.206:../images
-        # run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" ./ root@lbifadjrwd:../var/www/html/.output scp -o StrictHostKeyChecking=no my-image.tar root@5.35.84.206:~
 
       - name: Load Docker image on remote server
         run: |
-          ssh -o $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 << 'ENDSSH'
+          ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 << 'ENDSSH'
           docker load -i my-image.tar
           ENDSSH
 
