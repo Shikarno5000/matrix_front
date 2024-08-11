@@ -2,7 +2,7 @@
 
 https://www.programonaut.com/how-to-deploy-a-git-repository-to-a-server-using-github-actions/
 
-Новая попытка 1 test2.yaml
+Новая попытка 2 test2.yaml
 
 
 
