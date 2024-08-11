@@ -27,7 +27,7 @@ ll -l .ssh/
 cat ~/.ssh/id_rsa.pub | ssh root@5.35.84.206 'cat >> ~/.ssh/authorized_keys'
 root@5.35.84.206
 
-1111222
+1111222222
 
 
 В чем нужно еще разобраться:
