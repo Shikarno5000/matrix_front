@@ -25,6 +25,11 @@ ssh-keygen -t rsa -q -N '' -f ~/.ssh/id_rsa
 ll -l .ssh/
 
 
+1111
+
 
 В чем нужно еще разобраться:
       Что делать с https
+
+
+      https://beget.com/ru/kb/how-to/ssh/avtomaticheskaya-ssh-avtorizacziya-po-klyuchu?_gl=1%2a11z2eeg%2aFPAU%2aMjAzMTk4OTkzMy4xNzIzMDM1MzM5%2a_ga%2aOTU4NTQ2OTcyLjE3MjMwMzUzMzk.%2a_ga_PZJSKZPBP7%2aMTcyMzI5MjQ1Ny4xMC4xLjE3MjMyOTM3MTQuMC4wLjA.%2a_fplc%2aSGxkRmlialJTcHo5ZDN2VjU1YXZBZWc1alcwa1k2WTd6S1dHUHRSalg3NnNzdjZadk1hcmVFZ1E2TmJ6bWYlMkJGblJYQ3Q1Tm9TUGJGNlp2czdjNmdnYTJCJTJGV3NzMTZJMHElMkJsVHpTcXhSRndiM2VDT29nSXpQRXhCNXdKSGhnJTNEJTNE
