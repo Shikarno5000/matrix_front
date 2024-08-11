@@ -29,10 +29,10 @@ jobs:
       #- run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete ./ root@lbifadjrwd:../var/www/html/.output
       # - run: "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 reboot"
       # - name: Build Docker image
-      run: docker build -t my-image:latest .
+      - run: docker build -t my-image:latest .
 
       #- name: Save Docker image as tar file
-      run: docker save -o my-image.tar my-image:latest
+      - run: docker save -o my-image.tar my-image:latest
 
       - name: Transfer Docker image to remote server
       - run: "scp -o $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 my-image.tar ."
