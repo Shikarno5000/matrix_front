@@ -25,7 +25,7 @@ ssh-keygen -t rsa -q -N '' -f ~/.ssh/id_rsa
 ll -l .ssh/
 
 
-1111
+1111222
 
 
 В чем нужно еще разобраться:
