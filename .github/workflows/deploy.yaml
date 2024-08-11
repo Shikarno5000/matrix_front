@@ -1,0 +1,55 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      # Setup key
+      - run: set -eu
+      - run: mkdir "$HOME/.ssh"
+      - run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > "$HOME/.ssh/key"
+      - run: chmod 600 "$HOME/.ssh/key"
+      # Build
+      #- run: yarn install
+      # - run: npm run build
+      # - run: yarn build
+      # Deploy
+      #- run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete ./ root@lbifadjrwd:../var/www/html/.output
+      # - run: "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 reboot"
+      # - name: Build Docker image
+      run: docker build -t my-image:latest .
+
+      #- name: Save Docker image as tar file
+      run: docker save -o my-image.tar my-image:latest
+
+      - name: Transfer Docker image to remote server
+      - run: "scp -o $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 my-image.tar ."
+
+      - name: Load Docker image on remote server
+        run: |
+          ssh -o $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 << 'ENDSSH'
+          docker load -i my-image.tar
+          ENDSSH
+
+      - name: Transfer Docker Compose file to remote server
+        run: |
+          scp -o HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 docker-compose.yaml root@5.35.84.206:.
+
+      - name: Deploy Docker containers using Docker Compose on remote server
+        run: |
+          ssh -o HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 << 'ENDSSH'
+          docker compose -f docker-compose.yaml up -d
+          ENDSSH  
+
