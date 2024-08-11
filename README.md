@@ -24,6 +24,8 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub root@5.35.84.206
 ssh-keygen -t rsa -q -N '' -f ~/.ssh/id_rsa
 ll -l .ssh/
 
+cat ~/.ssh/id_rsa.pub | ssh root@5.35.84.206 'cat >> ~/.ssh/authorized_keys'
+root@5.35.84.206
 
 1111222
 
