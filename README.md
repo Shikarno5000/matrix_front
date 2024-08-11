@@ -11,7 +11,7 @@
 Создание nuxt docker https://markus.oberlehner.net/blog/running-nuxt-3-in-a-docker-container/
 
 
-Проба рабоать с докером удаленно 5
+Проба рабоать с докером удаленно 6
 
 
 
