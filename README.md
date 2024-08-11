@@ -1,10 +1,19 @@
 
 
 
-ssh-keygen -t rsa -b 4096 -C "root@5.35.84.206" 
-cat /root/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
-cat /root/.ssh/id_rsa
-скопировал с пробелом
+Создание ключа на удаленном сервере.
+      
+      ssh-keygen -t rsa -b 4096 -C "root@5.35.84.206" 
+      cat /root/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+      cat /root/.ssh/id_rsa #скопировал с пробелом
+
+
+Создание nuxt docker https://markus.oberlehner.net/blog/running-nuxt-3-in-a-docker-container/
+
+
+
+
+
 
 
 
