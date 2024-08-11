@@ -38,17 +38,17 @@ jobs:
       - run: "scp -o $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 my-image.tar ."
 
       - name: Load Docker image on remote server
-        run: |
+      - run: |
           ssh -o $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 << 'ENDSSH'
           docker load -i my-image.tar
           ENDSSH
 
       - name: Transfer Docker Compose file to remote server
-        run: |
+      - run: |
           scp -o HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 docker-compose.yaml root@5.35.84.206:.
 
       - name: Deploy Docker containers using Docker Compose on remote server
-        run: |
+      - run: |
           ssh -o HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 << 'ENDSSH'
           docker compose -f docker-compose.yaml up -d
           ENDSSH  
