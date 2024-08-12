@@ -33,7 +33,7 @@ jobs:
 
       - name: Save Docker image as tar file
         run: |
-          docker save -o my-image.tar my-image:latest-dev
+          docker save -o my-image.tar my-image:latest
           chmod 664 my-image.tar
 
       - name: Transfer Docker image to remote server
