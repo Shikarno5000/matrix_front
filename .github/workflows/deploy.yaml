@@ -32,7 +32,9 @@ jobs:
         run: docker build -t my-image:latest .
 
       - name: Save Docker image as tar file
-        run: docker save -o my-image.tar my-image:latest
+        run: |
+          docker save -o my-image.tar my-image:latest-dev
+          chmod 664 my-image.tar
 
       - name: Transfer Docker image to remote server
         uses: appleboy/scp-action@v0.1.7
@@ -53,8 +55,15 @@ jobs:
           ENDSSH
 
       - name: Transfer Docker Compose file to remote server
-        run: |
-          rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete ./docker-compose.yaml root@5.35.84.206:../dc
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: 5.35.84.206
+          username: root
+          port: 22
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: docker-compose.yaml
+          target: ./dc
+        # run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete ./docker-compose.yaml root@5.35.84.206:../dc
 
       - name: Deploy Docker containers using Docker Compose on remote server
         run: |
