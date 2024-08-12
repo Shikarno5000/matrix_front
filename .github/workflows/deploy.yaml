@@ -35,7 +35,7 @@ jobs:
         run: docker save -o my-image.tar my-image:latest
 
       - name: Transfer Docker image to remote server
-        run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete ./my-image.tar root@5.35.84.206:../images
+        run: scp -o "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" my-image.tar root@5.35.84.206:images
 
       - name: Load Docker image on remote server
         run: |
