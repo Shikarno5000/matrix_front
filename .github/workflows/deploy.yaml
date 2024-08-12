@@ -35,7 +35,16 @@ jobs:
         run: docker save -o my-image.tar my-image:latest
 
       - name: Transfer Docker image to remote server
-        run: scp -o "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" my-image.tar root@5.35.84.206:images
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: 5.35.84.206
+          username: root
+          port: 22
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: my-image.tar
+          target: ./images
+
+        #run: scp -o "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" my-image.tar root@5.35.84.206:images
 
       - name: Load Docker image on remote server
         run: |
