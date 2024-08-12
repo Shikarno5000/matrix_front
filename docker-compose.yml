@@ -1,7 +1,9 @@
-version: "3"
+version: "3.9"
 services:
-  my-app:
-    build:
-      context: .
+  app:
+    container_name: deploy
+    image: my-image:latest
+    restart: always
+
     ports:
-      - "3000:3000"
+      - 3000:3000
