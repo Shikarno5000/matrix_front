@@ -21,13 +21,7 @@ jobs:
       - run: mkdir "$HOME/.ssh"
       - run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > "$HOME/.ssh/key"
       - run: chmod 600 "$HOME/.ssh/key"
-      # Build
-      #- run: yarn install
-      # - run: npm run build
-      # - run: yarn build
-      # Deploy
-      #- run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete ./ root@lbifadjrwd:../var/www/html/.output
-      # - run: "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 reboot"
+      
       - name: Build Docker image
         run: docker build -t my-image:latest .
 
@@ -46,8 +40,6 @@ jobs:
           source: my-image.tar
           target: ./images
 
-        #run: scp -o "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" my-image.tar root@5.35.84.206:images
-
       - name: Load Docker image on remote server
         run: |
           ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 << 'ENDSSH'
@@ -63,11 +55,11 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: docker-compose.yaml
           target: ./dc
-        # run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete ./docker-compose.yaml root@5.35.84.206:../dc
-
+      
       - name: Deploy Docker containers using Docker Compose on remote server
         run: |
           ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 << 'ENDSSH'
           docker compose -f ~/dc/docker-compose.yaml up -d
-          ENDSSH     
+          ENDSSH
+              
 
