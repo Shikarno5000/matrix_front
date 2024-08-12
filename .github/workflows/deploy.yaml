@@ -61,13 +61,13 @@ jobs:
           username: root
           port: 22
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: docker-compose.yml
+          source: docker-compose.yaml
           target: ./dc
         # run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete ./docker-compose.yaml root@5.35.84.206:../dc
 
       - name: Deploy Docker containers using Docker Compose on remote server
         run: |
           ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 << 'ENDSSH'
-          docker compose -f ~/dc/docker-compose.yml up -d
+          docker compose -f ~/dc/docker-compose.yaml up -d
           ENDSSH  
 
