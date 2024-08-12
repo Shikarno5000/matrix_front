@@ -69,5 +69,5 @@ jobs:
         run: |
           ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 << 'ENDSSH'
           docker compose -f ~/dc/docker-compose.yaml up -d
-          ENDSSH  
+          ENDSSH     
 
