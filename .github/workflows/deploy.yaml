@@ -61,7 +61,7 @@ jobs:
           username: root
           port: 22
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: docker-compose.yaml
+          source: docker-compose.yml
           target: ./dc
         # run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete ./docker-compose.yaml root@5.35.84.206:../dc
 
