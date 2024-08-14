@@ -28,8 +28,8 @@ services:
 
   # Наш условный сайт
   front:
-    container_name: deploy
-    image: my-image:latest
+    container_name:  front
+    image: front:latest
     restart: always
 
     ports:
@@ -48,7 +48,7 @@ services:
       - /tmp/letsencrypt/www:/tmp/letsencrypt/www
       - ./certs:/etc/nginx/certs
     environment:
-      - EMAIL=my@email.com
+      - EMAIL=andrey@martinov.ru.com
       - SERVER_CONTAINER=nginx
       - WEBROOT_PATH=/tmp/letsencrypt/www
       - CERTS_PATH=/etc/nginx/certs
