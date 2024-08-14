@@ -6,7 +6,7 @@
       1.3 Обновление и чистка
       1.4 Установка https https://docs.testit.software/installation-guide/set-up-https.html
         1.4.3 открытие порта https://hub.docker.com/r/steveltn/https-portal/
-        1.4.4.8  https://vverh.digital/blog/docker-nginx-ssl-example/
+        1.4.4.9  https://vverh.digital/blog/docker-nginx-ssl-example/
 
 
 
