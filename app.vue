@@ -7,7 +7,7 @@
       1.2 Переименование  
       1.3 Обновление и чистка
       1.4 Установка https https://docs.testit.software/installation-guide/set-up-https.html
-        1.4.1 открытие порта
+        1.4.2 открытие порта
 
 
 
