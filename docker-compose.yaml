@@ -48,11 +48,11 @@ services:
       - /tmp/letsencrypt/www:/tmp/letsencrypt/www
       - ./certs:/etc/nginx/certs
     environment:
-      - EMAIL=andrey@martinov.ru.com
+      - EMAIL=andrey@martinov.ru
       - SERVER_CONTAINER=nginx
       - WEBROOT_PATH=/tmp/letsencrypt/www
       - CERTS_PATH=/etc/nginx/certs
-      - DOMAINS=5.35.84.206:3000
+      - DOMAINS=5.35.84.206
       - CHECK_FREQ=1
       - SERVER_CONTAINER_LABEL=proxy_nginx
     restart: unless-stopped
