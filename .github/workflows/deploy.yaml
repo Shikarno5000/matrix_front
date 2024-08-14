@@ -53,7 +53,7 @@ jobs:
           username: root
           port: 22
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: docker-compose.yaml,/nginx
+          source: "docker-compose.yaml,nginx/*"
           target: ./dc
       
       - name: Deploy Docker containers using Docker Compose on remote server
