@@ -59,7 +59,7 @@ jobs:
       - name: Deploy Docker containers using Docker Compose on remote server
         run: |
           ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 << 'ENDSSH'
-          docker compose -f ~/front/docker-compose.yaml up -d
+          docker compose -f ~/front/deploy/docker-compose.yaml up -d
           ENDSSH
               
 
