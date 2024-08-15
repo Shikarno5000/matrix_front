@@ -9,7 +9,7 @@
         1.4.4.14  https://vverh.digital/blog/docker-nginx-ssl-example/
 
       1.5.2 проба настроить nqinx
-      1.6.2 установка https
+      1.6.3 установка https
 
 docker compose run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ -d 5.35.84.206
 docker compose run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ --dry-run -d  5.35.84.206
