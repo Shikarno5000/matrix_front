@@ -9,12 +9,13 @@
         1.4.4.14  https://vverh.digital/blog/docker-nginx-ssl-example/
 
       1.5.2 проба настроить nqinx
+      1.6.1 установка https
 
-
-
+docker compose run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ -d 5.35.84.206
+docker compose run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ --dry-run -d  5.35.84.206
 
 На  фроне обновляется автоматически
-
+1.6 закрытие 3000  //https://matakov.com/ssl-i-otkrytye-porty-v-docker-kak-zashhitit-soedinenie/
 
 
 
@@ -25,7 +26,7 @@
         cat /root/.ssh/id_rsa #скопировал с пробелом и копировал а сектреты
 
 
-      Создание nuxt docker https://markus.oberlehner.net/blog/running-nuxt-3-in-a-docker-container/
+     
 
 
       В чем нужно еще разобраться:
