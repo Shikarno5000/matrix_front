@@ -6,8 +6,8 @@ services:
     labels:
       proxy_nginx: "Тест nginx"
     ports:
-      - '127.0.0.1:180:80'
-      - '127.0.0.1:180:443'
+      - '180:80'
+      - '180:443'
     volumes:
       # Nginx settings
       - ./nginx:/etc/nginx/conf.d
