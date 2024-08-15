@@ -1,6 +1,6 @@
 <template>
   <div>
-    Версия 1.4.4.10
+    Версия 1.5
     <NuxtRouteAnnouncer />
     <NuxtWelcome />
   </div>

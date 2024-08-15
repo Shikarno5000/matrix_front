@@ -8,6 +8,8 @@
         1.4.3 открытие порта https://hub.docker.com/r/steveltn/https-portal/
         1.4.4.14  https://vverh.digital/blog/docker-nginx-ssl-example/
 
+      1.5 проба настроить nqinx
+
 
 
 

@@ -1,0 +1,33 @@
+services:
+  nginx:
+    depends_on:
+      - front
+    image: nginx:latest
+    labels:
+      proxy_nginx: "Тест nginx"
+    ports:
+      - '180:80'
+      - '443:443'
+    volumes:
+      # Nginx settings
+      - ./nginx:/etc/nginx/conf.d
+      # Logs
+      - ./logs:/var/log/nginx/
+      #  For letsencrypt (SSL)
+      # - ./certs:/etc/nginx/certs
+      # - /tmp/letsencrypt/www:/tmp/letsencrypt/www
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '10m'
+        max-file: '10'
+    restart: always
+
+  # Front
+  front:
+    container_name:  front
+    image: front:latest
+    restart: always
+
+    ports:
+      - 3000:3000

@@ -30,36 +30,36 @@ jobs:
           docker save -o front.tar front:latest
           chmod 664 front.tar
 
-      - name: Transfer Docker image to remote server
+      - name: Transfer files to remote server
         uses: appleboy/scp-action@master
         with:
           host: 5.35.84.206
           username: root
           port: 22
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: front.tar
-          target: ./images
+          source: "front.tar,/deploy/*"
+          target: ./front
 
       - name: Load Docker image on remote server
         run: |
           ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 << 'ENDSSH'
-          docker load -i ~/images/front.tar
+          docker load -i ~/front/front.tar
           ENDSSH
 
-      - name: Transfer Docker Compose file to remote server
-        uses: appleboy/scp-action@master
-        with:
-          host: 5.35.84.206
-          username: root
-          port: 22
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "docker-compose.yaml,nginx/*"
-          target: ./dc
+      # - name: Transfer Docker Compose file to remote server
+      #   uses: appleboy/scp-action@master
+      #   with:
+      #     host: 5.35.84.206
+      #     username: root
+      #     port: 22
+      #     key: ${{ secrets.SSH_PRIVATE_KEY }}
+      #     source: 
+      #     target: ./dc
       
       - name: Deploy Docker containers using Docker Compose on remote server
         run: |
           ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 << 'ENDSSH'
-          docker compose -f ~/dc/docker-compose.yaml up -d
+          docker compose -f ~/front/docker-compose.yaml up -d
           ENDSSH
               
 
