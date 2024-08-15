@@ -6,7 +6,7 @@ services:
     labels:
       proxy_nginx: "Тест nginx"
     ports:
-      - '80:80'
+      - '180:80'
       - '443:443'
     volumes:
       # Nginx settings
@@ -32,8 +32,3 @@ services:
 
     ports:
       - 3000:3000
-
-  certbot:
-    image: certbot/certbot:latest
-    volumes:
-      - ./certbot/www/:/var/www/certbot/:rw    
