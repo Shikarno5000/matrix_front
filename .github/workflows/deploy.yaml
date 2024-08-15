@@ -37,7 +37,7 @@ jobs:
           username: root
           port: 22
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "front.tar,/deploy/*"
+          source: "front.tar,deploy/*"
           target: ./front
 
       - name: Load Docker image on remote server
