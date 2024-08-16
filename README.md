@@ -9,7 +9,7 @@
       1.5.2 проба настроить nqinx
       1.6.3 установка https
       1.6.4 откат
-      1.6.5 Перенос на реальных хостинг
+      1.6.5.1 Перенос на реальных хостинг
 
 1.6 закрытие 3000  //https://matakov.com/ssl-i-otkrytye-porty-v-docker-kak-zashhitit-soedinenie/
 
