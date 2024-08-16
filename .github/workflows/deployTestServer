@@ -19,7 +19,7 @@ jobs:
       # Setup key
       - run: set -eu
       - run: mkdir "$HOME/.ssh"
-      - run: echo "${{ secrets.PRIVATE_KEY }}" > "$HOME/.ssh/key"
+      - run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > "$HOME/.ssh/key"
       - run: chmod 600 "$HOME/.ssh/key"
       
       - name: Build Docker image
@@ -33,22 +33,22 @@ jobs:
       - name: Transfer files to remote server
         uses: appleboy/scp-action@master
         with:
-          host: 195.210.3.88
+          host: 195.210.3.88 #host: 5.35.84.206
           username: root
-          port: 2121
+          port: 2121 #port: 22
           key: ${{ secrets.PRIVATE_KEY }}
           source: "front.tar,deploy/*"
           target: ./front
 
       - name: Load Docker image on remote server
         run: |
-          ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no prog@economik << 'ENDSSH'
+          ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 << 'ENDSSH'
           docker load -i ~/front/front.tar
           ENDSSH
       
       - name: Deploy Docker containers using Docker Compose on remote server
         run: |
-          ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no prog@economik << 'ENDSSH'
+          ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no root@5.35.84.206 << 'ENDSSH'
           docker compose -f ~/front/deploy/docker-compose.yaml up -d
           ENDSSH
               

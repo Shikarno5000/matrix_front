@@ -10,6 +10,11 @@
       1.6.3 установка https
       1.6.4 откат
       1.6.5.1 Перенос на реальных хостинг
+      1.6.6 Проба переноса файлов 
+
+
+
+
 
 1.6 закрытие 3000  //https://matakov.com/ssl-i-otkrytye-porty-v-docker-kak-zashhitit-soedinenie/
 
