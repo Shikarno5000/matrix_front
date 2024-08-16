@@ -42,13 +42,13 @@ jobs:
 
       - name: Load Docker image on remote server
         run: |
-          ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no prog@economik << 'ENDSSH'
+          ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no prog@195.210.3.88 << 'ENDSSH'
           docker load -i ~/front/front.tar
           ENDSSH
       
       - name: Deploy Docker containers using Docker Compose on remote server
         run: |
-          ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no prog@economik << 'ENDSSH'
+          ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no prog@195.210.3.88 << 'ENDSSH'
           docker compose -f ~/front/deploy/docker-compose.yaml up -d
           ENDSSH
               
