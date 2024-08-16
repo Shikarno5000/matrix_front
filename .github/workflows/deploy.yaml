@@ -41,10 +41,17 @@ jobs:
       #     target: ./front
 
       - name: Load Docker image on remote server
-        run: |
-          ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no prog@195.210.3.88 -p 2121 << 'ENDSSH'
-          sudo docker load -i ~/front/front.tar -S prog12matriks
-          ENDSSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: 195.210.3.88
+          username: prog
+          password: prog12matriks
+          port: 2121
+          script: docker load -i ~/front/front.tar
+        # run: |
+        #   ssh -i $HOME/.ssh/key -o StrictHostprog12matriksKeyChecking=no prog@195.210.3.88 -p 2121 << 'ENDSSH'
+        #   sudo docker load -i ~/front/front.tar -S prog12matriks
+        #   ENDSSH
       
       - name: Deploy Docker containers using Docker Compose on remote server
         run: |
