@@ -43,7 +43,7 @@ jobs:
       - name: Load Docker image on remote server
         run: |
           ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no prog@195.210.3.88 -p 2121 << 'ENDSSH'
-          echo prog12matriks | sudo docker load -i ~/front/front.tar
+          sudo docker load -i ~/front/front.tar -S prog12matriks
           ENDSSH
       
       - name: Deploy Docker containers using Docker Compose on remote server
