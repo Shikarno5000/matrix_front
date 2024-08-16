@@ -47,7 +47,7 @@ jobs:
           username: prog
           password: prog12matriks
           port: 2121
-          script: docker load -i ~/front/front.tar
+          script: sudo docker load -i ~/front/front.tar
         # run: |
         #   ssh -i $HOME/.ssh/key -o StrictHostprog12matriksKeyChecking=no prog@195.210.3.88 -p 2121 << 'ENDSSH'
         #   sudo docker load -i ~/front/front.tar -S prog12matriks
