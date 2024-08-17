@@ -5,7 +5,7 @@
         Dashboard
         <strong class="font-extrabold text-red-700 sm:block"> в разработке! </strong>
         <div class="text-xs opacity-20">
-          0.0020
+          0.0100
         </div>
       </h1>
     </div>
