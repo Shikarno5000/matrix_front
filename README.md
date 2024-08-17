@@ -14,6 +14,10 @@
 
 
 
+ЧТо нужно сделать:
+Сделать рабочий сайт 
+Настроить деплой на тестовый сервер
+
 
 
 1.6 закрытие 3000  //https://matakov.com/ssl-i-otkrytye-porty-v-docker-kak-zashhitit-soedinenie/
