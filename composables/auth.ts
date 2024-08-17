@@ -8,8 +8,8 @@ const errorCode: TErrorResponse = {
 }
 
 export function useAuth() {
-  const baseURL = process.env.NODE_ENV !== 'production' ? 'http://127.0.0.1:8000/api' : 'https://mapi.martinov.ru/api'
-  const baseStorageURL = process.env.NODE_ENV !== 'production' ? 'http://127.0.0.1:8000' : 'https://mapi.martinov.ru'
+  const baseURL = process.env.NODE_ENV !== 'production' ? 'http://127.0.0.1:8000/api' : 'http://5.35.84.206:8090/api'
+  const baseStorageURL = process.env.NODE_ENV !== 'production' ? 'http://127.0.0.1:8000' : 'http://5.35.84.206:8090'
   const cookieToken = useCookie('at', {
     expires: new Date(Date.now() + 12096e5), // 2 weeks from now
     sameSite: 'strict'
