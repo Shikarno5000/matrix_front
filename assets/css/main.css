@@ -1,0 +1,18 @@
+@layer components {
+  .m-main {
+    @apply flex flex-col md:flex-row h-full w-full;
+  }
+  .m-main__body {
+    @apply grow;
+  }
+  .m-body__header {
+    @apply border-b border-gray-100 shadow-md bg-white  dark:bg-[#302941] p-3 flex items-center justify-between md:flex-row;
+  }
+
+  .m-main__bg {
+    @apply inset-0 bg-black/30 dark:bg-white/30 z-10 fixed lg:hidden;
+  }
+  .m-main__sidebar {
+    @apply bg-white overflow-x-hidden overflow-y-auto h-full min-h-screen w-72 min-w-72 z-20 p-3 border-r fixed top-0 bottom-0 lg:sticky flex-none;
+  }
+}

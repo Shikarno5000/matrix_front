@@ -1,0 +1,30 @@
+@layer components {
+  .m-main-menu {
+    @apply space-y-1 mt-10;
+  }
+  .m-main-menu .router-link-active {
+    @apply !bg-gray-100 !text-gray-700;
+  }
+
+  .m-main-menu__icon {
+    @apply h-5 w-5 opacity-75;
+  }
+  .m-main-menu__item {
+    @apply flex items-center gap-2 px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700;
+  }
+  .m-main-menu__subitems {
+    @apply mt-2 space-y-1 px-4;
+  }
+  .m-main-menu__subitem {
+    @apply block px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700;
+  }
+  .m-main-menu__text {
+    @apply text-sm font-medium;
+  }
+  .m-main-menu__chevron {
+    @apply shrink-0 transition duration-300 group-open:-rotate-180;
+  }
+  .m-main-menu__sub-block {
+    @apply flex items-center justify-between px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700;
+  }
+}

@@ -1,0 +1,24 @@
+@layer components {
+  /* Кнопки */
+  .m-btn {
+    @apply flex items-center text-xl gap-1 p-2 px-3 rounded disabled:opacity-20;
+  }
+  .m-btn--small {
+    @apply text-base p-1 px-2;
+  }
+  .m-btn--icon-big .m-btn__icon {
+    @apply size-8;
+  }
+  .m-btn--gray {
+    @apply bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300 hover:bg-gray-300;
+  }
+  .m-btn--green {
+    @apply bg-green-100 text-gray-800 dark:bg-green-700 dark:text-gray-300 hover:bg-green-300;
+  }
+  .m-btn--red {
+    @apply bg-red-100 text-gray-800 dark:bg-red-700 dark:text-gray-300 hover:bg-red-300;
+  }
+  .m-btn__icon {
+    @apply transition relative m-auto duration-300;
+  }
+}

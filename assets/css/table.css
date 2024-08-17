@@ -1,0 +1,31 @@
+@layer components {
+  /* Таблицы */
+  .m-table {
+    @apply w-full max-w-full text-xs text-left text-gray-500 dark:text-gray-400;
+  }
+  .m-table__header {
+    @apply border-b-2;
+  }
+  .m-table__header th {
+    @apply whitespace-break-spaces p-2 font-bold text-gray-900;
+  }
+  .m-table__header th:first-child {
+    @apply pl-3;
+  }
+  .m-table__body {
+    @apply divide-y divide-gray-200;
+  }
+  .m-table__body tr {
+    @apply odd:bg-gray-50;
+  }
+  .m-table__error {
+    @apply !bg-red-100;
+  }
+
+  .m-table__body td {
+    @apply p-2 text-gray-700;
+  }
+  .m-table__body td:first-child {
+    @apply pl-3;
+  }
+}

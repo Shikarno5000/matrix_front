@@ -1,0 +1,9 @@
+@layer components {
+   /* list */
+   .m-list {
+    @apply flex gap-3 p-2 justify-between  odd:bg-gray-50 text-xs;
+  }
+  .m-list__head {
+    @apply text-gray-600 font-semibold;
+  }
+}

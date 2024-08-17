@@ -1,0 +1,15 @@
+@layer components {
+  /* popover */
+  .m-popover {
+    @apply relative inline-block;
+  }
+  .m-popover__btn {
+    @apply relative flex items-center gap-1 underline decoration-dashed underline-offset-2;
+  }
+  .m-popover__icon {
+    @apply h-4 w-4;
+  }
+  .m-popover__panel {
+    @apply absolute z-10 -right-10 bottom-5 shadow-xl bg-white border p-0.5 min-w-72;
+  }
+}

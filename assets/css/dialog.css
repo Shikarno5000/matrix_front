@@ -1,0 +1,28 @@
+@layer components {
+  /* alert */
+  .m-dialog {
+    @apply relative z-20;
+  }
+  .m-dialog__bg {
+    @apply fixed inset-0 bg-black/30 dark:bg-white/30;
+  }
+  .m-dialog__block {
+    @apply fixed inset-0 overflow-y-auto;
+  }
+  .m-dialog__item {
+    @apply flex min-h-full items-center justify-center p-0 text-center;
+  }
+  .m-dialog__panel {
+    @apply w-full max-w-2xl transform rounded-md bg-white dark:bg-gray-800 p-0 m-2 text-left align-middle shadow-xl transition-all z-40;
+  }
+  .m-dialog__title {
+    @apply text-base font-medium leading-6 p-2 pl-4 flex items-center justify-between border-b;
+  }
+  .m-dialog__body {
+    @apply  p-4 pb-10 m-text-default;
+  }
+  .m-dialog__btns {
+    @apply  p-4 flex justify-between border-t;
+  }
+
+}

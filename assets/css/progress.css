@@ -1,0 +1,9 @@
+@layer components {
+  /* Прогресс */
+  .m-progress {
+    @apply flex items-center py-3;
+  }
+  .m-progress__icon {
+    @apply w-8 h-8 shrink-0 mr-4 rounded-full bg-blue-50 flex items-center justify-center;
+  }
+}

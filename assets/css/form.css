@@ -1,0 +1,131 @@
+@layer components {
+  /* Form */
+  /* checkbox */
+  .m-checkbox {
+    @apply flex cursor-pointer items-center ml-2 gap-4;
+  }
+  .m-checkbox.m-checkbox--small {
+    @apply text-sm;
+  }
+  .m-checkbox__text {
+    @apply font-medium;
+  }
+  .m-checkbox__icon {
+    @apply size-5 rounded border-gray-300;
+  }
+  .m-checkbox.m-checkbox--small .m-checkbox__icon {
+    @apply size-4;
+  }
+  /* select */
+  .m-select {
+    @apply relative  w-full min-w-[200px] focus-within:border-gray-600 ;
+  }
+  .m-select__text {
+    @apply pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs font-semibold;
+  }
+  .m-select__button {
+    @apply relative w-full cursor-default  py-2 pl-3 pr-10 text-left border focus:outline-none focus-visible:border-gray-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm z-10 h-10 disabled:opacity-40;
+  }
+
+  .m-select--error .m-select__button {
+    @apply focus-within:border-red-600;
+  }
+  .m-select--default .m-input__button {
+    @apply focus-within:border-gray-500;
+  }
+
+  .m-select__options {
+    @apply absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white dark:bg-black dark:text-gray-300 py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm z-30 ;
+  }
+  .m-select--error .m-select__hint {
+    @apply text-red-500;
+  }
+  .m-select--default .m-select__hint {
+    @apply text-gray-700;
+  }
+  .m-select__hint {
+    @apply flex justify-between text-xs mt-0.5;
+  }
+
+  /* input */
+
+  .m-input__label {
+    @apply relative block border border-gray-200 shadow-sm focus-within:ring-1;
+  }
+  .m-input--error .m-input__label {
+    @apply focus-within:ring-red-600;
+  }
+  .m-input--default .m-input__label {
+    @apply focus-within:ring-gray-600;
+  }
+  .m-input__body {
+    @apply border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 p-2 w-full;
+  }
+  .m-input__text {
+    @apply pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs font-semibold;
+  }
+  .m-input--error .m-input__text {
+    @apply text-red-500;
+  }
+  .m-input--default .m-input__text {
+    @apply text-gray-700;
+  }
+  .m-input--error .m-input__hint {
+    @apply text-red-500;
+  }
+  .m-input--default .m-input__hint {
+    @apply text-gray-700;
+  }
+  .m-input__hint {
+    @apply flex justify-between text-xs mt-0.5;
+  }
+
+  .m-input.m-input--header .m-input__body {
+    @apply h-6 pl-5;
+  }
+
+  /* textarea */
+  .m-textarea {
+    @apply relative block bg-transparent pt-3 w-full min-w-[200px];
+  }
+  .m-textarea--error {
+    @apply text-red-500 focus-within:border-red-600;
+  }
+  .m-textarea--default {
+    @apply text-gray-700 dark:text-gray-400;
+  }
+  .m-textarea__body {
+    @apply w-full border border-gray-200 shadow-sm focus-within:border-gray-600 bg-transparent p-2 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm disabled:border-0  disabled:bg-gray-50 mb-0  h-10;
+  }
+  .m-textarea--error .m-textarea__body {
+    @apply border-red-200  focus:border-red-500 placeholder-shown:border-red-200;
+  }
+  .m-textarea--default .m-textarea__body {
+    @apply border-gray-200  focus:border-gray-400 placeholder-shown:border-gray-200;
+  }
+  .m-textarea__hint {
+    @apply flex justify-between text-xs -mt-1;
+  }
+  .m-textarea__label {
+    @apply pointer-events-none absolute start-2.5 top-3 -translate-y-1/2 bg-white p-0.5 text-xs transition-all peer-placeholder-shown:top-8 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs font-semibold;
+  }
+  .m-textarea--error .m-textarea__label {
+    @apply peer-disabled:peer-placeholder-shown:text-red-500 peer-focus:after:border-red-500 peer-focus:text-red-500 peer-placeholder-shown:text-red-500 after:border-red-500;
+  }
+  .m-textarea--default .m-textarea__label {
+    @apply peer-disabled:peer-placeholder-shown:text-gray-400 peer-focus:after:border-gray-400 peer-focus:text-gray-400 peer-placeholder-shown:text-gray-400 after:border-gray-400;
+  }
+  /* m-radio */
+  .m-radio__header {
+    @apply font-semibold pb-2;
+  }
+  .m-radio__item {
+    @apply flex items-center mb-4;
+  }
+  .m-radio__input {
+    @apply h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300;
+  }
+  .m-radio__label {
+    @apply text-sm font-medium text-gray-900 ml-2 block;
+  }
+}

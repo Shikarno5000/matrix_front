@@ -1,0 +1,9 @@
+@layer components {
+  .m-timeline {
+    @apply divide-y;
+    /* @apply relative px-4 before:absolute before:top-1 before:bottom-0 before:w-0.5 before:-left-3 before:bg-gray-300; */
+  }
+  .m-timeline__item {
+    @apply flex gap-3 p-1 py-2 justify-between  items-center;
+  }
+}

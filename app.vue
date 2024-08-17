@@ -1,7 +1,6 @@
 <template>
-  <div>
-    Версия 2
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
-  </div>
+  <NuxtLayout>
+    <NuxtLoadingIndicator color="blue" />
+    <NuxtPage />
+  </NuxtLayout>
 </template>

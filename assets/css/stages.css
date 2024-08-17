@@ -1,0 +1,26 @@
+@layer components {
+  .m-stages {
+    @apply divide-y;
+  }
+  .m-stage {
+    @apply flex items-center gap-3 justify-between p-0.5  min-h-8;
+  }
+  .m-stage.m-badge--gray .m-checkbox__text {
+    @apply text-gray-600;
+  }
+  .m-stage.m-badge--red .m-checkbox__text {
+    @apply text-red-600;
+  }
+  .m-stage.m-badge--green .m-checkbox__text {
+    @apply text-green-600;
+  }
+  .m-stage__checkbox {
+    @apply w-5 h-5 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600;
+  }
+  .m-stage .m-checkbox__text {
+    @apply text-xs;
+  }
+  .m-stage__label {
+    @apply ml-2 font-medium;
+  }
+}

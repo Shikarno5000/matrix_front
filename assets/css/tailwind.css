@@ -1,0 +1,66 @@
+@import 'base.css';
+@import 'form.css';
+@import 'section.css';
+@import 'progress.css';
+@import 'popover.css';
+@import 'list.css';
+@import 'btn.css';
+@import 'badge.css';
+@import 'alert.css';
+@import 'dialog.css';
+@import 'table.css';
+@import 'stages.css';
+@import 'timeline.css';
+@import 'mainMenu.css';
+@import 'main.css';
+
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+@layer components {
+  /* Общие */
+  p {
+    @apply py-2;
+  }
+  h3 {
+    @apply my-4 mt-5 text-base md:text-lg lg:text-xl xl:text-xl font-bold tracking-tight;
+  }
+  .m-text-primary {
+    @apply text-blue-700 dark:text-blue-400;
+  }
+  .m-text-default {
+    @apply text-gray-900 dark:text-gray-200;
+  }
+  .m-text-muted {
+    @apply text-gray-400 dark:text-blue-100;
+  }
+
+  /* Списки */
+  .m-ul {
+    @apply divide-y divide-gray-300 dark:divide-gray-700 text-xs md:text-sm;
+  }
+  .m-ul li {
+    @apply flex gap-4 items-center py-3;
+  }
+  .m-ul .m-ul__icon {
+    @apply text-orange-500 w-4 h-4 md:w-5 md:h-5 lg:w-7 lg:h-7;
+  }
+
+  /* ССылки */
+  .m-link {
+    @apply text-gray-900 antialiased transition-colors duration-300 hover:text-pink-500;
+  }
+  /* .link--white {
+    @apply text-white underline hover:m-text-primary;
+  } */
+  .link__icon {
+    @apply mr-1 mt-0.5 w-4 h-4;
+  }
+
+  .m-card-list {
+    @apply divide-y;
+  }
+
+  /* Проверенные */
+}

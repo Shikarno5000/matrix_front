@@ -1,0 +1,32 @@
+@layer components {
+  /* Секций */
+  .m-section {
+    @apply bg-white dark:bg-[#302941] border shadow-sm;
+  }
+  .m-section__header {
+    @apply p-1 px-4 flex justify-between w-full font-bold items-center border-b min-h-[45px];
+  }
+  .m-section.m-section--second .m-section__header {
+    @apply bg-green-100 py-0 min-h-[35px];
+  }
+  .m-section__header .m-btn {
+    @apply text-base p-1 px-2;
+  }
+  /* .m-section__header .m-btn__icon {
+    @apply size-5;
+  } */
+  .m-section__title {
+    @apply text-xs uppercase;
+  }
+  .m-section__body {
+    @apply p-4;
+  }
+
+  .m-section.m-section--second .m-section__body {
+    @apply p-1;
+  }
+
+  .m-section__icon {
+    @apply size-6 ui-open:rotate-180 ui-open:transform;
+  }
+}

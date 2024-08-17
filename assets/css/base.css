@@ -1,0 +1,16 @@
+@layer base {
+  html {
+    /* font-family: 'Roboto', system-ui, sans-serif; */
+    scroll-behavior: smooth; /* плавная прокрутка */
+  }
+  body {
+    font-family: 'Roboto', sans-serif;
+    @apply bg-gray-100 dark:bg-[#221735] text-black dark:text-gray-300;
+  }
+  /* Главное меню */
+
+  /* Выделение активной ссылки */
+  /* .router-link-active {
+    @apply underline-offset-2 underline;
+  }   */
+}
