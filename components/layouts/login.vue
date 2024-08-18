@@ -38,7 +38,7 @@ const password = ref('')
 const showError = ref<false | TErrorData>(false)
 
 async function login () {
-  const { data, pending, error } = await useFetch<TDefaultResponse>('/auth/login', getOptions('POST', { email.value, password.value }))
+  const { data, pending, error } = await useFetch<TDefaultResponse>('/auth/login', getOptions('POST', { email: email.value, password: password.value }))
   if (!pending && data.value) {
     cookieToken.value = data.value.token
     await store.getUser()
@@ -49,19 +49,4 @@ async function login () {
    
   }
 }
-
-
-async function login(email: string, password: string) {
-    try {
-      const { data, pending } = await useFetch<TDefaultResponse>('/auth/login', getOptions('POST', { email.value, password.value }))
-      if (pending && data.value) {
-        cookieToken.value = data.value.token
-        return data.value
-      }
-    } catch {
-      return errorCode
-    }
-    return errorCode
-  }
-
 </script>
