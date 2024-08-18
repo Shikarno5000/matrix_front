@@ -27,6 +27,10 @@ import { useVuelidate } from '@vuelidate/core'
 import { useAuthStore } from '~/store/auth'
 const store = useAuthStore()
 const v$ = useVuelidate()
+const cookieToken = useCookie('at', {
+  expires: new Date(Date.now() + 12096e5), // 2 weeks from now
+  sameSite: 'strict'
+})
 
 const disabledSubmit = computed(() => v$.value.$invalid)
 const email = ref('')
@@ -34,12 +38,30 @@ const password = ref('')
 const showError = ref<false | TErrorData>(false)
 
 async function login () {
-  const response = await useAuth().login(email.value, password.value)
-  if (response.success) {
+  const { data, pending, error } = await useFetch<TDefaultResponse>('/auth/login', getOptions('POST', { email.value, password.value }))
+  if (pending && data.value) {
+    cookieToken.value = data.value.token
     await store.getUser()
     return navigateTo('/')
-  } else {
+  }
+  if (error.value) {
     showError.value = response.error
+   
   }
 }
+
+
+async function login(email: string, password: string) {
+    try {
+      const { data, pending } = await useFetch<TDefaultResponse>('/auth/login', getOptions('POST', { email.value, password.value }))
+      if (pending && data.value) {
+        cookieToken.value = data.value.token
+        return data.value
+      }
+    } catch {
+      return errorCode
+    }
+    return errorCode
+  }
+
 </script>
