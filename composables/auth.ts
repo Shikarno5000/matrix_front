@@ -12,7 +12,7 @@ export function useAuth() {
   const baseStorageURL = process.env.NODE_ENV !== 'production' ? 'http://127.0.0.1:8000' : 'http://5.35.84.206:8090'
   const cookieToken = useCookie('at', {
     expires: new Date(Date.now() + 12096e5), // 2 weeks from now
-    sameSite: 'strict'
+  // sameSite: 'strict'
   })
   const loggedIn = computed(() => !!cookieToken.value)
 

@@ -2,7 +2,7 @@ export function useAuthNew() {
   const baseURL = process.env.NODE_ENV !== 'production' ? 'http://127.0.0.1:8000/api' : 'http://5.35.84.206:8090/api'
   const cookieToken = useCookie('at', {
     expires: new Date(Date.now() + 12096e5), // 2 weeks from now
-    sameSite: 'strict'
+    // sameSite: 'strict'
   })
 
   function getLazyOptionsNew(method: string = 'GET', body: any = false, file: boolean = false) {
