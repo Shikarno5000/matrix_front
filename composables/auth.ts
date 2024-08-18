@@ -10,11 +10,11 @@ const errorCode: TErrorResponse = {
 export function useAuth() {
   const baseURL = process.env.NODE_ENV !== 'production' ? 'http://127.0.0.1:8000/api' : 'http://5.35.84.206:8090/api'
   const baseStorageURL = process.env.NODE_ENV !== 'production' ? 'http://127.0.0.1:8000' : 'http://5.35.84.206:8090'
-  // const cookieToken = useCookie('at', {
-  //   expires: new Date(Date.now() + 12096e5), // 2 weeks from now
-  // // sameSite: 'strict'
-  // })
-  const cookieToken = useCookie('at')
+  const cookieToken = useCookie('at', {
+    expires: new Date(Date.now() + 12096e5), // 2 weeks from now
+  // sameSite: 'strict'
+  })
+  // const cookieToken = useCookie('at')
   const loggedIn = computed(() => !!cookieToken.value)
 
   function getOptions(method: string, body: any = false, file: boolean = false) {
@@ -95,9 +95,9 @@ export function useAuth() {
       const { data, pending } = await useFetch<TDefaultResponse>('/auth/login', getOptions('POST', { email, password }))
       if (pending) {
         if (data.value) {
-          console.log(data.value, cookieToken.value)
           if (data.value.success) {
             cookieToken.value = data.value.token
+            console.log(data.value, cookieToken.value, data.value.token)
           }
           return data.value
         }
