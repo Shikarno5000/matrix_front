@@ -89,6 +89,10 @@ export function useAuth() {
     return useFetch<TDefaultResponse>(url, getLazyOptions(method, newData, file))
   }
 
+  async function login(email: string, password: string) {
+    return await useFetch<TDefaultResponse>('/auth/login', getOptions('POST', { email, password }))
+  }
+
   async function logout() {
     try {
       const { data, pending } = await useFetch<TDefaultResponse>('/auth/logout', getOptions('POST'))
@@ -108,6 +112,7 @@ export function useAuth() {
   return {
     baseStorageURL,
     api,
+    login,
     logout,
     apiLazy,
     getLazyOptions
