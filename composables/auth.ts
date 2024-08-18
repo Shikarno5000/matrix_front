@@ -14,7 +14,6 @@ export function useAuth() {
     expires: new Date(Date.now() + 12096e5), // 2 weeks from now
   // sameSite: 'strict'
   })
-  // const cookieToken = useCookie('at')
   const loggedIn = computed(() => !!cookieToken.value)
 
   function getOptions(method: string, body: any = false, file: boolean = false) {
@@ -93,14 +92,9 @@ export function useAuth() {
   async function login(email: string, password: string) {
     try {
       const { data, pending } = await useFetch<TDefaultResponse>('/auth/login', getOptions('POST', { email, password }))
-      if (pending) {
-        if (data.value) {
-          if (data.value.success) {
-            cookieToken.value = data.value.token
-            console.log(data.value, cookieToken.value, data.value.token)
-          }
-          return data.value
-        }
+      if (pending && data.value) {
+        cookieToken.value = data.value.token
+        return data.value
       }
     } catch {
       return errorCode
