@@ -2,7 +2,8 @@ ARG NODE_VERSION=20
 
 FROM node:${NODE_VERSION}-slim as base
 
-ARG PORT=3000
+# ARG PORT=3000
+ARG PORT=3050
 
 ENV NODE_ENV=production
 

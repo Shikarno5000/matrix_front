@@ -27,5 +27,10 @@
 1.6 закрытие 3000  //https://matakov.com/ssl-i-otkrytye-porty-v-docker-kak-zashhitit-soedinenie/
 
 
+эксперимент по зпуску втрого сайта
+
+dockerfile
+nqinx
+docker-compose
 
 
