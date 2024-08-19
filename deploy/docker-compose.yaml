@@ -2,6 +2,7 @@ services:
   nginx:
     depends_on:
       - front
+      - api
     image: nginx:latest
     labels:
       proxy_nginx: "Тест nginx"
@@ -32,3 +33,12 @@ services:
 
     ports:
       - 3000:3000
+
+  # api
+  api:
+    container_name:  api
+    image: api:latest
+    restart: always
+
+    ports:
+      - 9000:9000
