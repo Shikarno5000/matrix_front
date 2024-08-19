@@ -114,8 +114,8 @@ const menu = [
       // { name: 'Статичные данные', to: '/admin/static-data' },
       // { name: 'exel-test', to: '/admin/exel-test' },
       // { name: 'Элементы', to: '/admin/elements' },
-      { name: 'Управление файлами', to: '/admin/files' }
-
+      { name: 'Управление файлами', to: '/admin/files' },
+      { name: 'Вопрос', to: '/questions' }
     ]
   },
   {
