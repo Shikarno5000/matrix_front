@@ -5,14 +5,24 @@
         Dashboard
         <strong class="font-extrabold text-red-700 sm:block"> в разработке! </strong>
         <div class="text-xs opacity-20">
-          0.0100
-        </div>        
+          0.0110
+        </div>
+        
+        
+        <div @click="test()">11</div>  
+
       </h1>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+function test() {
+  const { data, pending, error } = useFetch<TDefaultResponse>('http://front:3000')
+  console.log(data, pending, error)
+}
+
+
 definePageMeta({
   middleware: 'm-auth'
 })
