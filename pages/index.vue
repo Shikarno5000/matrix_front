@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 function test() {
-  const { data, pending, error } = useFetch<TDefaultResponse>('http://front:3000')
+  const { data, pending, error } = useFetch<TDefaultResponse>('http://127.0.0.1:3000')
   console.log(data, pending, error)
 }
 function test2() {
