@@ -10,6 +10,8 @@
         
         
         <div @click="test()">11</div>  
+        <div @click="test2()">11</div>  
+
 
       </h1>
     </div>
@@ -21,7 +23,10 @@ function test() {
   const { data, pending, error } = useFetch<TDefaultResponse>('http://front:3000')
   console.log(data, pending, error)
 }
-
+function test2() {
+  const { data, pending, error } = useFetch<TDefaultResponse>('http://api:9000')
+  console.log(data, pending, error)
+}
 
 definePageMeta({
   middleware: 'm-auth'
